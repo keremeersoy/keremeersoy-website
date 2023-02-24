@@ -4,6 +4,7 @@ import Contact from "./components/Contact";
 import myPhoto from "./images/myphoto.jpg";
 import { GrMail, GrTwitter, GrGithub } from "react-icons/gr";
 import { MdPageview } from "react-icons/md";
+import { BsBoxArrowUpRight } from "react-icons/bs";
 import { useState } from "react";
 import cv from "./images/cv.pdf";
 import ReactIcon from "./images/reacticon.png";
@@ -28,18 +29,26 @@ function App() {
       </div>
 
       {/* Giriş */}
-      <div className="bg-[#18122B] text-white pt-32 pb-8 px-32 flex  items-center justify-between">
+      <div className="bg-[#18122B] text-white pt-32 pb-8 lg:px-32 px-10 sm:flex  items-center sm:justify-between justify-center sm:text-left text-center">
+        <div className="rounded-full sm:hidden flex items-center justify-center mb-6">
+          <img
+            className="rounded-full lg:w-[400px] w-[200px] shadow-lg"
+            src={myPhoto}
+            alt="myPhoto"
+          />
+        </div>
         <div>
-          <h2 className="text-7xl font-bold text-[#FAD6A5]">
+          <h2 className="lg:text-7xl text-5xl font-bold text-[#FAD6A5]">
             Azimet Kerem Ersoy
           </h2>
-          <p className="mt-6 text-5xl">Web Developer</p>
-          <div className="mt-6 flex items-center gap-x-5">
+          <p className="lg:mt-6 mt-3 lg:text-5xl text-3xl">Web Developer</p>
+          <p className="lg:mt-6 mt-3 lg:text-3xl text-xl">Ankara, Turkey</p>
+          <div className="lg:mt-6 mt-3 flex items-center gap-x-5 justify-center sm:justify-start">
             <a href="https://github.com/keremeersoy" target="_blank">
-              <GrGithub className="text-3xl hover:scale-110 duration-300 hover:text-[#161B22]" />
+              <GrGithub className="lg:text-3xl text-xl hover:scale-110 duration-300 hover:text-[#161B22]" />
             </a>
             <a href="https://twitter.com/keremeersoy" target="_blank">
-              <GrTwitter className="text-3xl hover:scale-110 duration-300 hover:text-[#1D9BF0]" />
+              <GrTwitter className="lg:text-3xl text-xl hover:scale-110 duration-300 hover:text-[#1D9BF0]" />
             </a>
             <button
               onClick={() => {
@@ -47,13 +56,13 @@ function App() {
                 // navigator.clipboard.writeText("azimetkeremersoy@gmail.com");
               }}
             >
-              <GrMail className="text-3xl hover:scale-110 duration-300 hover:text-[#C5221F]" />
+              <GrMail className="lg:text-3xl text-xl hover:scale-110 duration-300 hover:text-[#C5221F]" />
             </button>
           </div>
         </div>
-        <div className="border-2 shadow-xl border-[#7B8FA1] rounded-full">
+        <div className="border-2 shadow-xl border-[#7B8FA1] rounded-full hidden sm:block">
           <img
-            className="rounded-full w-[400px] shadow-lg"
+            className="rounded-full lg:w-[400px] w-[200px] shadow-lg"
             src={myPhoto}
             alt="myPhoto"
           />
@@ -62,7 +71,7 @@ function App() {
 
       {/* About */}
       <div
-        className="bg-gradient-to-t from-[#393053] to-[#18122B] py-32 px-32"
+        className="bg-gradient-to-t from-[#393053] to-[#18122B] lg:py-32 lg:px-32 p-10"
         id="about"
       >
         <h2 className="text-4xl font-bold text-[#EAE0DA]">
@@ -90,7 +99,7 @@ function App() {
           <a
             href={cv}
             download="cv.pdf"
-            className="border-2 px-12 py-4 border-[#CFB997] text-[#CFB997] hover:scale-110 duration-300"
+            className="border-2 px-12 py-4 border-[#CFB997] text-[#CFB997] hover:scale-110 duration-300 sm:block hidden"
           >
             Download CV
             {/* <a href={cv} target="_blank" rel="noopener noreferrer">
@@ -98,118 +107,137 @@ function App() {
             </a> */}
           </a>
         </div>
+        <a
+          href={cv}
+          download="cv.pdf"
+          className="border-2 px-12 py-4 mt-6 flex items-center justify-center border-[#CFB997] text-[#CFB997] hover:scale-110 duration-300  sm:hidden"
+        >
+          Download CV
+          {/* <a href={cv} target="_blank" rel="noopener noreferrer">
+              Download CV
+            </a> */}
+        </a>
       </div>
 
       {/* Skills */}
       <div
-        className="bg-gradient-to-t from-[#18122B] to-[#393053] py-32 px-32"
+        className="bg-gradient-to-t from-[#18122B] to-[#393053] lg:py-32 lg:px-32 p-10"
         id="skills"
       >
         <h2 className="text-4xl font-bold text-[#EAE0DA]">
           SKILLS
           <div className="h-[1px] mt-2 bg-[#EAE0DA]"></div>
         </h2>
-        <div className="text-lg mt-6">
-          <div className="m-4 flex items-center p-4 bg-[#18122B] shadow-xl">
+        <div className="xl:text-lg mt-6">
+          {/* React */}
+          <div className="lg:m-4 my-2 lg:flex items-center p-4 bg-[#18122B] shadow-xl">
             <div className="w-40 flex items-center">
-              <img src={ReactIcon} alt="react" className="h-10" />
-              <h2 className="ml-4 text-xl">React</h2>
+              <img src={ReactIcon} alt="react" className="lg:h-10 h-4" />
+              <h2 className="ml-4 lg:text-xl">React</h2>
             </div>
-            <div className="h-5 ml-10 bg-[#EAE0DA] w-[900px]"></div>
+            <div className="lg:h-5 h-3 lg:ml-10 lg:mt-0 mt-2 bg-[#EAE0DA]  w-4/5"></div>
           </div>
 
-          <div className="m-4 flex items-center p-4 bg-[#18122B] shadow-xl">
+          {/* Next.js */}
+          <div className="lg:m-4 my-2 lg:flex items-center p-4 bg-[#18122B] shadow-xl">
             <div className="w-40 flex items-center">
-              <img src={NextIcon} alt="react" className="h-10" />
-              <h2 className="ml-4 text-xl">Next.js</h2>
+              <img src={NextIcon} alt="react" className="lg:h-10 h-4" />
+              <h2 className="ml-4 lg:text-xl">Next.js</h2>
             </div>
-            <div className="h-5 ml-10 bg-[#EAE0DA] w-[650px]"></div>
+            <div className="lg:h-5 h-3 lg:ml-10 lg:mt-0 mt-2 bg-[#EAE0DA]  w-4/6"></div>
           </div>
 
-          <div className="m-4 flex items-center p-4 bg-[#18122B] shadow-xl">
+          {/* Typescript */}
+          <div className="lg:m-4 my-2 lg:flex items-center p-4 bg-[#18122B] shadow-xl">
             <div className="w-40 flex items-center">
-              <img src={TypescriptIcon} alt="react" className="h-10" />
-              <h2 className="ml-4 text-xl">Typescript</h2>
+              <img src={TypescriptIcon} alt="react" className="lg:h-10 h-4" />
+              <h2 className="ml-4 lg:text-xl">Typescript</h2>
             </div>
-            <div className="h-5 ml-10 bg-[#EAE0DA] w-[550px]"></div>
+            <div className="lg:h-5 h-3 lg:ml-10 lg:mt-0 mt-2 bg-[#EAE0DA]  w-3/5"></div>
           </div>
 
-          <div className="m-4 flex items-center p-4 bg-[#18122B] shadow-xl">
+          {/* Node.js */}
+          <div className="lg:m-4 my-2 lg:flex items-center p-4 bg-[#18122B] shadow-xl">
             <div className="w-40 flex items-center">
-              <img src={NodeIcon} alt="react" className="h-10" />
-              <h2 className="ml-4 text-xl">Node.js</h2>
+              <img src={NodeIcon} alt="react" className="lg:h-10 h-4" />
+              <h2 className="ml-4 lg:text-xl">Node.js</h2>
             </div>
-            <div className="h-5 ml-10 bg-[#EAE0DA] w-[150px]"></div>
+            <div className="lg:h-5 h-3 lg:ml-10 lg:mt-0 mt-2 bg-[#EAE0DA]  w-1/5"></div>
           </div>
 
-          <div className="m-4 flex items-center p-4 bg-[#18122B] shadow-xl">
+          {/* Bootstrap */}
+          <div className="lg:m-4 my-2 lg:flex items-center p-4 bg-[#18122B] shadow-xl">
             <div className="w-40 flex items-center">
-              <img src={BootstrapIcon} alt="react" className="h-10" />
-              <h2 className="ml-4 text-xl">Bootstrap</h2>
+              <img src={BootstrapIcon} alt="react" className="lg:h-10 h-4" />
+              <h2 className="ml-4 lg:text-xl">Bootstrap</h2>
             </div>
-            <div className="h-5 ml-10 bg-[#EAE0DA] w-[450px]"></div>
+            <div className="lg:h-5 h-3 lg:ml-10 lg:mt-0 mt-2 bg-[#EAE0DA]  w-2/5"></div>
           </div>
 
-          <div className="m-4 flex items-center p-4 bg-[#18122B] shadow-xl">
+          {/* TailwindCSS */}
+          <div className="lg:m-4 my-2 lg:flex items-center p-4 bg-[#18122B] shadow-xl">
             <div className="w-40 flex items-center">
-              <img src={TailwindIcon} alt="react" className="h-10" />
-              <h2 className="ml-4 text-xl">TailwindCSS</h2>
+              <img src={TailwindIcon} alt="react" className="lg:h-10 h-4" />
+              <h2 className="ml-4 lg:text-xl">TailwindCSS</h2>
             </div>
-            <div className="h-5 ml-10 bg-[#EAE0DA] w-[650px]"></div>
+            <div className="lg:h-5 h-3 lg:ml-10 lg:mt-0 mt-2 bg-[#EAE0DA]  w-4/6"></div>
           </div>
 
-          <div className="m-4 flex items-center p-4 bg-[#18122B] shadow-xl">
+          {/* MySQL */}
+          <div className="lg:m-4 my-2 lg:flex items-center p-4 bg-[#18122B] shadow-xl">
             <div className="w-40 flex items-center">
-              <img src={MysqlIcon} alt="react" className="h-10" />
-              <h2 className="ml-4 text-xl">MySQL</h2>
+              <img src={MysqlIcon} alt="react" className="lg:h-10 h-4" />
+              <h2 className="ml-4 lg:text-xl">MySQL</h2>
             </div>
-            <div className="h-5 ml-10 bg-[#EAE0DA] w-[300px]"></div>
+            <div className="lg:h-5 h-3 lg:ml-10 lg:mt-0 mt-2 bg-[#EAE0DA]  w-1/3"></div>
           </div>
 
-          <div className="m-4 flex items-center p-4 bg-[#18122B] shadow-xl">
+          {/* Firebase */}
+          <div className="lg:m-4 my-2 lg:flex items-center p-4 bg-[#18122B] shadow-xl">
             <div className="w-40 flex items-center">
-              <img src={FirebaseIcon} alt="react" className="h-10" />
-              <h2 className="ml-4 text-xl">Firebase</h2>
+              <img src={FirebaseIcon} alt="react" className="lg:h-10 h-4" />
+              <h2 className="ml-4 lg:text-xl">Firebase</h2>
             </div>
-            <div className="h-5 ml-10 bg-[#EAE0DA] w-[250px]"></div>
+            <div className="lg:h-5 h-3 lg:ml-10 lg:mt-0 mt-2 bg-[#EAE0DA]  w-1/4"></div>
           </div>
 
-          <div className="m-4 flex items-center p-4 bg-[#18122B] shadow-xl">
+          {/* Rest API's */}
+          <div className="lg:m-4 my-2 lg:flex items-center p-4 bg-[#18122B] shadow-xl">
             <div className="w-40 flex items-center">
-              <img src={RestapiIcon} alt="react" className="h-10" />
-              <h2 className="ml-4 text-xl">Rest API's</h2>
+              <img src={RestapiIcon} alt="react" className="lg:h-10 h-4" />
+              <h2 className="ml-4 lg:text-xl">Rest API's</h2>
             </div>
-            <div className="h-5 ml-10 bg-[#EAE0DA] w-[350px]"></div>
+            <div className="lg:h-5 h-3 lg:ml-10 lg:mt-0 mt-2 bg-[#EAE0DA]  w-5/12"></div>
           </div>
         </div>
       </div>
 
       {/* Projects */}
       <div
-        className="bg-gradient-to-t from-[#393053] to-[#18122B] py-32 px-32"
+        className="bg-gradient-to-t from-[#393053] to-[#18122B] lg:py-32 lg:px-32 p-10"
         id="projects"
       >
         <h2 className="text-4xl font-bold text-[#EAE0DA]">
           PROJECTS
           <div className="h-[1px] mt-2 bg-[#EAE0DA]"></div>
         </h2>
-        <div className="grid grid-cols-2 mt-6">
+        <div className="grid lg:grid-cols-2 grid-cols-1 mt-6">
           {/* Setcrews */}
-          <div className="bg-[#18122B] m-6 p-6 shadow-xl">
+          <div className="bg-[#18122B] lg:m-6 my-2 mx-0 p-6 shadow-xl">
             <a
               href="https://setcrews.com"
               target="_blank"
               className="text-2xl flex items-center"
             >
               <div className="hover:scale-110 duration-300">SetCrews</div>{" "}
-              <MdPageview className="ml-4" />
+              <BsBoxArrowUpRight className="ml-4" />
             </a>
             <div className="mt-6">
               SetCrews is a platform developed for people working in various
               sectors, especially the cinema industry, and people who need new
               people in their projects to find themselves.
             </div>
-            <div className="mt-12 grid gap-4 grid-cols-6 xl:grid-cols-12 items-center">
+            <div className="mt-12 grid gap-4 md:grid-cols-6 grid-cols-4 xl:grid-cols-12 items-center">
               <img src={NextIcon} className="h-10" alt="" />
               <img src={TailwindIcon} className="h-10" alt="" />
               <img src={MysqlIcon} className="h-10" alt="" />
@@ -220,7 +248,7 @@ function App() {
             </div>
           </div>
           {/* disney-plus-clone */}
-          <div className="bg-[#18122B] m-6 p-6 shadow-xl">
+          <div className="bg-[#18122B] lg:m-6 my-2 mx-0 p-6 shadow-xl">
             <a
               href="https://disney-plus-clone-reactapp.netlify.app"
               target="_blank"
@@ -229,7 +257,7 @@ function App() {
               <div className="hover:scale-110 duration-300">
                 disney-plus-clone
               </div>{" "}
-              <MdPageview className="ml-4" />
+              <BsBoxArrowUpRight className="ml-4" />
             </a>
             <div className="mt-6">
               I cloned the Disney plus movie viewing platform. I created the
@@ -237,7 +265,7 @@ function App() {
               that Authentication can be done with FirebaseAuth. I pulled the
               movie data from TMDB API.
             </div>
-            <div className="mt-6 grid gap-4 grid-cols-6 xl:grid-cols-12 items-center">
+            <div className="mt-6 grid gap-4 md:grid-cols-6 grid-cols-4 xl:grid-cols-12 items-center">
               <img src={ReactIcon} className="h-10" alt="" />
               <img src={TailwindIcon} className="h-10" alt="" />
               <img src={RestapiIcon} className="h-9" alt="" />
@@ -245,38 +273,38 @@ function App() {
             </div>
           </div>
           {/* Amazon-clone */}
-          <div className="bg-[#18122B] m-6 p-6 shadow-xl">
+          <div className="bg-[#18122B] lg:m-6 my-2 mx-0 p-6 shadow-xl">
             <a
               href="https://amazon-clone-woad-eight.vercel.app"
               target="_blank"
               className="text-2xl flex items-center"
             >
               <div className="hover:scale-110 duration-300">amazon-clone</div>{" "}
-              <MdPageview className="ml-4" />
+              <BsBoxArrowUpRight className="ml-4" />
             </a>
             <div className="mt-6">
               I cloned the amazon platform using Next.js. I finalized it by
               adding functions such as authentication, adding products to the
               basket, getting paid with Stripe.
             </div>
-            <div className="mt-6 grid gap-4 grid-cols-6 xl:grid-cols-12 items-center">
+            <div className="mt-6 grid gap-4 md:grid-cols-6 grid-cols-4 xl:grid-cols-12 items-center">
               <img src={NextIcon} className="h-10" alt="" />
               <img src={TailwindIcon} className="h-10" alt="" />
               <img src={RestapiIcon} className="h-9" alt="" />
               <img src={FirebaseIcon} className="h-10" alt="" />
               <img src={NextauthIcon} className="h-9" alt="" />
-              <img src={StripeIcon} className="" alt="" />
+              <img src={StripeIcon} className="h-5 " alt="" />
             </div>
           </div>
           {/* react-nodejs-mysql-crud */}
-          <div className="bg-[#18122B] m-6 p-6 shadow-xl">
+          <div className="bg-[#18122B] lg:m-6 my-2 mx-0 p-6 shadow-xl">
             <div className="text-2xl flex items-center">
               react-nodejs-mysql-crud{" "}
             </div>{" "}
             <div className="mt-6">
               Simple project with React, Node.js, MySQL.
             </div>
-            <div className="mt-10 grid gap-4 grid-cols-6 xl:grid-cols-12 items-center">
+            <div className="mt-10 grid gap-4 md:grid-cols-6 grid-cols-4 xl:grid-cols-12 items-center">
               <img src={ReactIcon} className="h-10" alt="" />
               <img src={TailwindIcon} className="h-10" alt="" />
               <img src={NodeIcon} className="h-9" alt="" />
